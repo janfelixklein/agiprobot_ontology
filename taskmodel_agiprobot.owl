@@ -1,0 +1,314 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.agiprobot.de/TaskModel"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.agiprobot.de/TaskModel">
+    <Prefix name="" IRI="http://www.agiprobot.de/TaskModel"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#MultiTask"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Task"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSubTask"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPerformedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isResultOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSubTaskOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#requiresProcess"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#resultsIn"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#LeverageSprings"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#PressOutBearingAndWasher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SeparateMagnets"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Task1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Task2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Task3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Task4_DissassemblyPolePot"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#RetainingSpring1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#ThrustWasher"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PlainBearing"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotHousing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#PressOut"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.agiprobot.de/ProductModel#Component"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#Magnet1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#Levereage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#Process"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#Separate"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#MultiTask"/>
+        <Class IRI="#Task"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultiTask"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasSubTask"/>
+            <Class IRI="#Task"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#performsOn"/>
+            <Class IRI="http://www.agiprobot.de/ProductModel#Component"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#requiresProcess"/>
+            <Class IRI="http://www.agiprobot.de/ProcessModel#Process"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Task"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#resultsIn"/>
+            <Class IRI="http://www.agiprobot.de/ProductModel#Component"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#Levereage"/>
+        <NamedIndividual IRI="#LeverageSprings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#PressOut"/>
+        <NamedIndividual IRI="#PressOutBearingAndWasher"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#Separate"/>
+        <NamedIndividual IRI="#SeparateMagnets"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MultiTask"/>
+        <NamedIndividual IRI="#Task4_DissassemblyPolePot"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performsOn"/>
+        <NamedIndividual IRI="#Task1"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requiresProcess"/>
+        <NamedIndividual IRI="#Task1"/>
+        <NamedIndividual IRI="#LeverageSprings"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsIn"/>
+        <NamedIndividual IRI="#Task1"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsIn"/>
+        <NamedIndividual IRI="#Task1"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#RetainingSpring1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performsOn"/>
+        <NamedIndividual IRI="#Task2"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requiresProcess"/>
+        <NamedIndividual IRI="#Task2"/>
+        <NamedIndividual IRI="#SeparateMagnets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsIn"/>
+        <NamedIndividual IRI="#Task2"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#Magnet1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsIn"/>
+        <NamedIndividual IRI="#Task2"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#performsOn"/>
+        <NamedIndividual IRI="#Task3"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotAssembly1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#requiresProcess"/>
+        <NamedIndividual IRI="#Task3"/>
+        <NamedIndividual IRI="#PressOutBearingAndWasher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsIn"/>
+        <NamedIndividual IRI="#Task3"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PlainBearing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsIn"/>
+        <NamedIndividual IRI="#Task3"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#PolePotHousing"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#resultsIn"/>
+        <NamedIndividual IRI="#Task3"/>
+        <NamedIndividual IRI="http://www.agiprobot.de/ProductModel#ThrustWasher"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSubTask"/>
+        <NamedIndividual IRI="#Task4_DissassemblyPolePot"/>
+        <NamedIndividual IRI="#Task1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSubTask"/>
+        <NamedIndividual IRI="#Task4_DissassemblyPolePot"/>
+        <NamedIndividual IRI="#Task2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasSubTask"/>
+        <NamedIndividual IRI="#Task4_DissassemblyPolePot"/>
+        <NamedIndividual IRI="#Task3"/>
+    </ObjectPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasSubTask"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#performsOn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#requiresProcess"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#resultsIn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasSubTask"/>
+        <ObjectProperty IRI="#isSubTaskOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isPerformedOn"/>
+        <ObjectProperty IRI="#performsOn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isResultOf"/>
+        <ObjectProperty IRI="#resultsIn"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSubTask"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#performsOn"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#requiresProcess"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#resultsIn"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSubTask"/>
+        <Class IRI="#Task"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performsOn"/>
+        <Class IRI="http://www.agiprobot.de/ProductModel#Component"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#requiresProcess"/>
+        <Class IRI="http://www.agiprobot.de/ProcessModel#Process"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#resultsIn"/>
+        <Class IRI="http://www.agiprobot.de/ProductModel#Component"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.agiprobot.de/ProductModel#PolePotAssembly3</IRI>
+        <Literal>Full PolePt Assembly</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Task1</IRI>
+        <Literal>Leveragethe springs that fix the magnets inside the polepot housing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performsOn</IRI>
+        <Literal>Input for a task</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
